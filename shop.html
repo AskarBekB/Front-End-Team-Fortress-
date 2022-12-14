@@ -4,29 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <title>Shop</title>
 </head>
 <body>
-    <div class="main">
-        <div class="menu">
-            <div class="logo">
-                <span>Dev</span>
-            </div>
-            <ul>
-                <li><i class="fa-solid fa-house"></i>HOME</li>
-                <li>User</li>
-                <li>Favourite</li>
-
-            </ul>
-        </div>
-        <div class="center">center</div>
-        <div class="car">car</div>
+    <div class="header">
+        <p class="logo">LOGO</p>
+        <div class="cart"><i class="fas fa-shopping-cart"></i>0</div>
     </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your Cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+            <p id="demo">bruh</p>
+        </div>
+    </div>
+    <!-- <img src="image/coffee1.jpg" alt=""> Americano
+    <img src="image/cofee5.jpg" alt="">  chocolate
+    <img src="image/cofee2.jpg" alt="">  latte
+    <img src="image/cofee3.jpg" alt="">  espresso
+    <img src="image/cofee4.jpg" alt="">  mokko -->
+
 </body>
 <script>
-
+    const product = [
+        {
+            id: 0,
+            image: 'image/coffee1.jpg',
+            title: 'Americano',
+            price: 1000,
+        },
+        {
+            id: 1,
+            image: 'image/coffee2.jpg',
+            title: 'Latte',
+            price: 1150, 
+        },
+        {
+            id: 2,
+            image: 'image/coffee3.jpg',
+            title: 'Espresso',
+            price: 1050, 
+        },
+        {
+            id: 3,
+            image: 'image/coffee4.jpg',
+            title: 'Mokko',
+            price: 1200, 
+        },
+        {
+            id: 1,
+            image: 'image/coffee5.jpg',
+            title: 'Chocolate',
+            price: 1450, 
+        },
+    ];
+    let demo =document.getElementById('demo');
+    console.log(demo.innerText);
 </script>
 </html>

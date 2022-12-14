@@ -1,2 +1,0 @@
-Now, I'll change the demo.txt and let's see the changes
-Hello everyone! This is just test and experiments from the GitHub

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Shop</title>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">COFFEE SHOP</p>
+        <div class="cart"><img src="image/carts.png" class="icon"><p id="count">0</p></div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your Cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+        </div>
+    </div>
+    <!-- <img src="image/coffee1.jpg" alt=""> Americano
+    <img src="image/cofee5.jpg" alt="">  chocolate
+    <img src="image/cofee2.jpg" alt="">  latte
+    <img src="image/cofee3.jpg" alt="">  espresso
+    <img src="image/cofee4.jpg" alt="">  mokko -->
+
+</body>
+<script>
+    const product = [
+        {
+            id: 0,
+            image: 'image/coffee1.jpg',
+            title: 'Americano',
+            price: 39
+        },
+        {
+            id: 1,
+            image: 'image/cofee2.jpg',
+            title: 'Latte',
+            price: 40 
+        },
+        {
+            id: 2,
+            image: 'image/cofee3.jpg',
+            title: 'Espresso',
+            price: 50 
+        },
+        {
+            id: 3,
+            image: 'image/cofee4.jpg',
+            title: 'Mokko',
+            price: 47 
+        },
+        {
+            id: 1,
+            image: 'image/cofee5.jpg',
+            title: 'Chocolate',
+            price: 55 
+        },
+    ];
+
+    const categories = [...new Set(product.map((item)=>
+    {return item}))]
+
+    let i=0;
+    document.getElementById('root').innerHTML=categories.map((item)=>
+    {
+        var {image , title, price} = item;
+        return(
+            `<div class='box'>
+                <div class='img-box'>
+                    <img class='images' src=${image}></img>
+                </div>
+            <div class='bottom'>
+            <p>${title}</p>
+            <h2>$ ${price}.00</h2>` +
+            "<button onclick='addtocart("+(i++)+")'>Add to cart</button>" +
+            `</div>
+            </div>`
+        )
+    }).join('');
+    var cart = [];
+
+    function addtocart(a){
+        cart.push({...categories[a]});
+        displaycart();
+      
+    }
+    function delElement(a){
+        cart.splice(a,1);
+        displaycart();
+    }
+
+    function displaycart(a){
+        let j =0; total=0;
+        document.getElementById("count").innerHTML=cart.length;
+        if(cart.length==0){
+            document.getElementById('cartItem').innerHTML="Your cart is Empty";
+            document.getElementById("total").innerHTML= "$ " +0+".00";
+    
+        } else{
+     
+            document.getElementById("cartItem").innerHTML=cart.map((items)=>
+            {
+                var{image, title, price}=items;
+                total=total+price;
+                document.getElementById("total").innerHTML="$ "+total+".00";
+                return(
+                    `<div class='cart-item'>
+                    <div class='row-img'>
+                        <img class='rowimg' src=${image}>
+                    </div>
+                    <p style='font-size:12px;'>${title}</p>
+                    <h2 style ='font-size: 15px;'>$ ${price}.00</h2>` +
+                    "<img src='image/trash.png' class='icon' onclick='delElement(" + (j++) + ")'></i></div>"
+                );
+            }).join('') ; 
+        }
+    }
+</script>
+</html>

@@ -7,15 +7,13 @@
 }
 
 body{
-    background: linear-gradient(to right, goldenrod, wheat,goldenrod);
+    background-image: url(image/background.jpg);
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
 .header{
     height: 80px;
     width: 70%;
@@ -112,6 +110,7 @@ body{
     border:1px solid goldenrod;
     border-radius: 5px;
     padding: 15px;
+    background-color: #eee;
 }
 
 .img-box{

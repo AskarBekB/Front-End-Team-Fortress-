@@ -187,8 +187,81 @@ button:hover{
     color: #333;
 }
 
+.submit{
+   color:forestgreen;
+   background-color: khaki;
+   display: none;
+}
+
+.submit:hover{
+    color: wheat;
+    background-color: gray;
+    transition: .5s ease;
+}
 
 @media screen and (max-width: 426px){
+    body{
+        background: linear-gradient(to right, rgb(70, 109, 223),rgb(219, 172, 84)t,rgb(70, 109, 223));
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #root{
+        width: 100%;
+        display:block;
+        margin-left: -1%;
+    }
+    .box{
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border:1px solid rgb(70, 109, 223);
+        border-radius: 5px;
+        padding: 15px;
+    }
+    .sidebar{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 284%;
+        left: -6.3%;
+    }
+    .header{
+        height: 80px;
+        width: 70%;
+        background-color: rgb(70, 109, 223);
+        border-radius: 3px;
+        margin: 30px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border:1px solid rgb(70, 109, 223);
+        border-radius: 5px;
+        padding: 15px;
+    }
+    button{
+        width: 100%;
+        position: relative;
+        border:none;
+        border-radius: 5px;
+        background-color:  rgb(70, 109, 223);
+        padding: 7px 25px;
+        cursor: pointer;
+        color: white;
+    }
+}
+@media screen and (max-width: 426px) and (min-width:350px) {
     #root{
         width: 100%;
         display:block;
@@ -208,6 +281,6 @@ button:hover{
         width: 100%;
         height: 100%;
         top: 284%;
-        left: -6.3%;
+        left: -4.65%;
     }
 }

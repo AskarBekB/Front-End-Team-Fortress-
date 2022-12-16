@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,7 @@
                 <h3>Total</h3>
                 <h2 id="total">$ 0.00</h2>
             </div>
+            <button class="submit" id="submit" onclick="saver()">Submit</button>
         </div>
     </div>
     <!-- <img src="image/coffee1.jpg" alt=""> Americano
@@ -30,7 +31,7 @@
     <img src="image/cofee2.jpg" alt="">  latte
     <img src="image/cofee3.jpg" alt="">  espresso
     <img src="image/cofee4.jpg" alt="">  mokko -->
-
+    
 </body>
 <script>
     const product = [
@@ -87,7 +88,7 @@
         )
     }).join('');
     var cart = [];
-
+    let pricer=0;
     function addtocart(a){
         cart.push({...categories[a]});
         displaycart();
@@ -103,15 +104,16 @@
         document.getElementById("count").innerHTML=cart.length;
         if(cart.length==0){
             document.getElementById('cartItem').innerHTML="Your cart is Empty";
+            document.getElementById("submit").style.display="none";
             document.getElementById("total").innerHTML= "$ " +0+".00";
     
         } else{
-     
             document.getElementById("cartItem").innerHTML=cart.map((items)=>
             {
                 var{image, title, price}=items;
                 total=total+price;
                 document.getElementById("total").innerHTML="$ "+total+".00";
+                document.getElementById("submit").style.display="block";
                 return(
                     `<div class='cart-item'>
                     <div class='row-img'>
@@ -121,8 +123,22 @@
                     <h2 style ='font-size: 15px;'>$ ${price}.00</h2>` +
                     "<img src='image/trash.png' class='icon' onclick='delElement(" + (j++) + ")'></i></div>"
                 );
+                localStorage.setItem("Price: ", total);
             }).join('') ; 
         }
+    }
+    function saver(){
+        if(cart.length!=0){
+        alert("You succesfully added");
+        document.getElementById("cartItem").innerHTML=cart.map((items)=>{
+            var{image,title,price}=items;
+            pricer=pricer+price;
+            localStorage.setItem("Price:",pricer);
+        });
+        cart.length=0;
+    } else{
+        localStorage.clear;
+    }
     }
 </script>
 </html>

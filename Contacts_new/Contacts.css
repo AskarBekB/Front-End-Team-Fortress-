@@ -266,6 +266,7 @@ header{
 .tab {
     position: absolute;
     text-align: center;
+	
     padding-left: 100px;
     
 }
@@ -332,4 +333,25 @@ header{
 }
 .log {
     text-align: center;
+}
+
+
+.contents{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	
+}
+.contents img{
+	margin: auto;
+	width: 30%;
+	
+	border-radius: 50%;
+}
+
+.contents p{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	margin: auto;
+	width: 80%;
+	margin-top: 2em;
 }

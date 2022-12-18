@@ -246,6 +246,10 @@ button:hover{
 }
 
 @media screen and (width:390px) and (height:844px){
+    body{
+        background-position: center;
+        background-position-y: 23%;
+    }
     #root{
         width: 100%;
         display:block;

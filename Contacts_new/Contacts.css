@@ -1,0 +1,277 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+:root{
+	--bg-color: white;
+	--text-color: #222327;
+	--main-color: #fde829;
+}
+body{
+	min-height: 100vh;
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+header{
+    background-color: white;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* background: transparent; */
+	padding: 28px 12%;
+	transition: all .50s ease;
+}
+.logo{
+	display: flex;
+	align-items: center;
+}
+
+
+.navbar{
+	display: flex;
+}
+.navbar a{
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 5px 0;
+	margin: 0px 30px;
+	transition: all .50s ease;
+}
+.navbar a:hover{
+	color: var(--main-color);
+}
+.navbar a.active{
+	color: var(--main-color);
+}
+.main{
+	display: flex;
+	align-items: center;
+}
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.user{
+	display: flex;
+	align-items: center;
+}
+.user i{
+	color: var(--main-color);
+	font-size: 28px;
+	margin-right: 7px;
+}
+.main a:hover{
+	color: var(--main-color);
+}
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 5px 0;
+		margin: 0px 20px;
+	}
+    .logo img{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1090px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+	}
+	.navbar a{
+		display: block;
+		margin: 12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+	}
+	.navbar a:hover{
+		color: var(--text-color);
+		transform: translateY(5px);
+	}
+	.navbar a.active{
+		color: var(--text-color);
+	}
+	.navbar.open{
+		right: 2%;
+	}
+}
+@media (max-width: 500px){
+    .logo img{
+        display: none;
+    }
+	
+}
+
+
+
+
+
+.img {
+	background-color: #fbc766 ;
+	position: relative;
+	width: 100%;
+	height: 440px;
+}
+.con {
+	position: relative;
+	text-align: center;
+	font-size: 24px;
+	top: -200px;
+}
+.cont {
+	background-color: #fbc766 ;
+    width: 49%;
+    height: 400px;
+    padding: 0px 0px;
+    margin: 0px;
+}
+@media (max-width: 700px) {
+	.img {
+		height: 300px;
+	}
+	.con {
+		top: -120px;
+	}	
+}
+@media (max-width: 980px) {
+    .cont {
+        width: 100%;
+    }
+    div .map {
+        width: 100%;
+    }
+}
+@media (max-width:600px) {
+    
+    tr {
+        max-width: 140px;
+    }
+    td {
+        max-width: 140px;
+    }
+}
+@media (max-width:1130px) {
+    .tab {
+        left: -70px;
+    }
+}
+
+.map {
+    width: 49%;
+    height: 400px;
+    padding: 0px 0px;
+    margin: 0px;
+    border: none;
+}
+.inli {
+    display: inline;
+}
+.tab {
+    position: absolute;
+    text-align: center;
+    padding-left: 100px;
+    
+}
+
+.ques {
+    position: relative;
+    text-align: center;
+}
+.inp {
+	position: relative;
+	text-align: center;
+	display: flex;
+  	justify-content: center;
+}
+.inp1 {
+    margin: 5px;
+    height: 60px;
+    width: 300px;
+    border: 1.5px solid rgb(195, 195, 195);
+}
+.inp2 {
+    margin: 5px;
+    height: 60px;
+    width: 300px;
+    border: 1.5px solid rgb(195, 195, 195);
+}
+.mes {
+	position: relative;
+	text-align: center;
+	display: flex;
+  	justify-content: center;
+}
+.mess {
+	width: 610px;
+	height: 250px;
+	border: 1.5px solid rgb(195, 195, 195);
+}
+.inp1:hover {
+    border: 1.5px solid black;
+}
+.inp2:hover {
+    border: 1.5px solid black;
+}
+.mess:hover{
+    border: 1.5px solid black;
+}
+.but {
+	position: relative;
+	text-align: center;
+}
+
+.butt {
+	height: 60px;
+	width: 170px;
+	background-color: black;
+	color: white;
+	border: 1px solid black;
+	font-size: 17px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.butt:hover {
+	background: #fbc766  ;
+	box-shadow: inset 0 0 0 3px #fbc766 ;
+}
+.log {
+    text-align: center;
+}

@@ -1,6 +1,5 @@
 *{
-    margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
     font-size: 18px;
@@ -15,6 +14,7 @@ body{
     flex-direction: column;
 }
 .header{
+    
     height: 80px;
     width: 70%;
     background-color: goldenrod;
@@ -24,6 +24,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+    margin-top: 15%;
 }
 .header .logo{
     font-size: 30px;

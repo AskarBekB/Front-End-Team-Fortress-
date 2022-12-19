@@ -127,7 +127,13 @@
         cart.splice(a,1);
         displaycart();
     }
-
+    if(localStorage.length>0){
+        document.getElementById("cartItem").innerHTML="You Cart price is: "
+        document.getElementById("total").innerHTML="$ " + localStorage.getItem("money")+".00";
+        console.log(localStorage.getItem("money"));
+    }else{
+        localStorage.clear();
+    }
     function displaycart(a){
         let j =0; total=0;
         document.getElementById("count").innerHTML=cart.length;
@@ -152,7 +158,6 @@
                     <h2 style ='font-size: 15px;'>$ ${price}.00</h2>` +
                     "<img src='image/trash.png' class='icon' onclick='delElement(" + (j++) + ")'></i></div>"
                 );
-                localStorage.setItem("Price: ", total);
             }).join('') ; 
         }
     }
@@ -162,9 +167,8 @@
         document.getElementById("cartItem").innerHTML=cart.map((items)=>{
             var{image,title,price}=items;
             pricer=pricer+price;
-            localStorage.setItem("Price:",pricer);
+            localStorage.setItem("money",pricer);
         });
-        cart.length=0;
     } else{
         localStorage.clear;
     }
